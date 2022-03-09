@@ -10,8 +10,12 @@ contract MockERC721 is ERC721 {
     uint256 public totalTokens;
     string public baseURI;
 
-    constructor() ERC721("MockERC721", "MCK") {
-        baseURI = "ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/";
+    constructor(
+        string memory name_,
+        string memory symbol_,
+        string memory baseURI_
+    ) ERC721(name_, symbol_) {
+        baseURI = baseURI_;
     }
 
     function mint() public {
